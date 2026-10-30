@@ -1,0 +1,38 @@
+# Environment for reproducing the paper (Linux x86_64, NVIDIA GPU, CUDA 12.x).
+#   uv sync
+
+[project]
+name = "glr"
+version = "1.0.0"
+description = "Geometric Latent Reasoning (GLR), NeurIPS 2026"
+authors = [
+    { name = "Shashi Kumar", email = "shashi.kumar@epfl.ch" },
+    { name = "Yacouba Kaloga", email = "yacouba.kaloga@idiap.ch" },
+]
+requires-python = "==3.10.*"
+dependencies = [
+    "torch==2.8.0",
+    "transformers==4.57.1",
+    "datasets==4.3.0",
+    "trl==0.24.0",
+    "vllm==0.11.0",
+    "safetensors==0.5.3",
+    "pyarrow==22.0.0",
+    "math-verify==0.8.0",
+    "sympy==1.14.0",
+    "antlr4-python3-runtime==4.11.0",
+    "numpy==2.2.6",
+    "pandas==2.3.3",
+    "scipy==1.15.3",
+    "scikit-learn==1.7.2",
+    "matplotlib==3.10.8",
+    "seaborn==0.13.2",
+    "tqdm==4.67.1",
+    # prebuilt flash-attn 2.8.3 wheel for CUDA 12 / torch 2.8 / cp310 (no compilation needed)
+    "flash-attn @ https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch2.8cxx11abiTRUE-cp310-cp310-linux_x86_64.whl",
+]
+
+[tool.uv]
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+# triton needs setuptools at runtime; keep the version used for the experiments.
+constraint-dependencies = ["setuptools==78.1.1"]

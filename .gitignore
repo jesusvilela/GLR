@@ -1,0 +1,20 @@
+# local path overrides
+glr_paths_local.py
+
+# environment
+.venv/
+__pycache__/
+*.pyc
+
+# data (built by the scripts), checkpoints, outputs
+data/train/
+data/eval/*.jsonl
+ckpts/
+outputs/
+*.arrow
+
+# uv generates this on install; not shipped
+uv.lock
+
+# NFS placeholders for files still open by a running process
+.nfs*

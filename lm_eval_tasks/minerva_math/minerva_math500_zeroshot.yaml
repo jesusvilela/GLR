@@ -1,0 +1,7 @@
+include: minerva_math_algebra.yaml
+task: minerva_math500_zeroshot
+dataset_name: default
+dataset_path: HuggingFaceH4/MATH-500
+training_split: null
+test_split: test
+num_fewshot: 0

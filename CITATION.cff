@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite our paper. Shashi Kumar and Yacouba Kaloga contributed equally."
+title: "Geometric Latent Reasoning Induces Shorter Generations in LLMs"
+authors:
+  - family-names: "Kumar"
+    given-names: "Shashi"
+    affiliation: "Idiap Research Institute, Switzerland; EPFL, Switzerland"
+  - family-names: "Kaloga"
+    given-names: "Yacouba"
+    affiliation: "Idiap Research Institute, Switzerland"
+  - family-names: "Motlicek"
+    given-names: "Petr"
+    affiliation: "Idiap Research Institute, Switzerland; BUT, Czech Republic"
+  - family-names: "Kodrasi"
+    given-names: "Ina"
+    affiliation: "Idiap Research Institute, Switzerland"
+  - family-names: "Cavallaro"
+    given-names: "Andrea"
+    affiliation: "EPFL, Switzerland"
+repository-code: "https://github.com/idiap/GLR"
+url: "https://glr-llm.github.io/"
+license: MIT
+identifiers:
+  - type: url
+    value: "https://arxiv.org/abs/2606.02248"
+preferred-citation:
+  type: conference-paper
+  title: "Geometric Latent Reasoning Induces Shorter Generations in LLMs"
+  authors:
+    - family-names: "Kumar"
+      given-names: "Shashi"
+    - family-names: "Kaloga"
+      given-names: "Yacouba"
+    - family-names: "Motlicek"
+      given-names: "Petr"
+    - family-names: "Kodrasi"
+      given-names: "Ina"
+    - family-names: "Cavallaro"
+      given-names: "Andrea"
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS)"
+  year: 2026
+  url: "https://arxiv.org/abs/2606.02248"

@@ -1,0 +1,26 @@
+version = 1
+
+# ============================
+# GLR (this repository)
+# ============================
+
+[[annotations]]
+path = [
+    ".gitignore",
+    "REUSE.toml",
+    "pyproject.toml",
+    "CITATION.cff",
+    "data/eval/SHA256SUMS"
+]
+SPDX-FileCopyrightText = "2026 Idiap Research Institute <contact@idiap.ch>"
+SPDX-License-Identifier = "MIT"
+
+
+# ============================
+# lm-evaluation-harness task configurations
+# ============================
+
+[[annotations]]
+path = "lm_eval_tasks/**"
+SPDX-FileCopyrightText = "2020 EleutherAI; 2026 Idiap Research Institute <contact@idiap.ch>"
+SPDX-License-Identifier = "MIT"
