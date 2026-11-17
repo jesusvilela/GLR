@@ -20,9 +20,15 @@ from src.metric.gsm8k_accuracy import score_file
 REFERENCE_PAIRS = (
     ("swn", "glr"),
     ("random", "glr"),
+    ("swn_cayley", "glr"),
+    ("orientation_cayley", "glr"),
+    ("swn_cayley", "orientation_cayley"),
     ("glr_2pass", "glr"),
     ("swn_2pass", "glr_2pass"),
     ("random_2pass", "glr_2pass"),
+    ("swn_cayley_2pass", "glr_2pass"),
+    ("orientation_cayley_2pass", "glr_2pass"),
+    ("swn_cayley_2pass", "orientation_cayley_2pass"),
 )
 
 
