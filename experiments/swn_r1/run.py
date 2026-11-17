@@ -15,9 +15,12 @@ import torch
 from safetensors import safe_open
 
 from experiments.swn_r1.adapter import LatentDeltaBridge, RuntimeTelos
+from experiments.swn_r2.bridge import CayleyDeltaBridge
 
 
-ARMS = ("glr", "swn", "random", "glr_2pass", "swn_2pass", "random_2pass")
+ARMS = ("glr", "swn", "random", "swn_cayley", "orientation_cayley",
+        "glr_2pass", "swn_2pass", "random_2pass",
+        "swn_cayley_2pass", "orientation_cayley_2pass")
 
 
 def verify_trained_glr_checkpoint(path: Path) -> None:
@@ -79,8 +82,10 @@ def generate_one(model, tok, prompt: str, *, arm: str, strength: float,
     if torch.cuda.is_available():
         torch.cuda.synchronize()
     tic = time.perf_counter()
-    with LatentDeltaBridge(model, mode=mode, strength=strength,
-                           random_seed=seed, telos=telos) as bridge:
+    bridge_cls = (CayleyDeltaBridge if mode in ("swn_cayley", "orientation_cayley")
+                  else LatentDeltaBridge)
+    with bridge_cls(model, mode=mode, strength=strength,
+                    random_seed=seed, telos=telos) as bridge:
         out = model.generate(
             **inputs, max_new_tokens=max_new_tokens,
             do_sample=False, use_cache=True, logits_to_keep=1,
